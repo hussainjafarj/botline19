@@ -96,7 +96,38 @@ client.on("message", async (message) => {
   if (!cooldowns.has(command.name)) {
     cooldowns.set(command.name, new Collection());
   }
+// Code Auto Line
+client.on("message", message => {
+if(message.author.bot) return;
+if(message.channel.id == "983386833482309652") { /// اي دي روم الخط
+message.channel.send("https://media.discordapp.net/attachments/983386931209580584/1044622350185938954/FB653D8B-87EC-4A34-A8C5-678FBE3305E0.png") /// رابط الخط
+} else { return; }
+})
+///ممنوع السرقة 
+client.login("OTkwMzMyODU4ODE0MDY2NzI5.G3Y8re.ZGw1rHGS03Fkf3RCrd0SquwlJejWJ8MUCWNnWM"); ///توكن هنا
 
+client.on("ready", () => {
+  client.user.setActivity(``)//غير الحالة الي تريد
+});
+
+client.on("message", async message => {
+ 
+  if (message.guild.id != "929497213674082304" ) return;
+  if (message.channel.id != "948592282242809856") return;    
+  if(message.author.id === client.user.id) return;
+      if (message.author.send) {
+    message.channel.send({files: ["https://cdn.discordapp.com/attachments/916668502109196328/948898483153293362/5cfece8f1d8d345e.png"]});
+ 
+  }
+ 
+});
+client.on('message', message => {
+  if (message.content === 'خط') {
+    message.delete();
+ message.channel.send({files: ["https://media.discordapp.net/attachments/983386931209580584/1044622350185938954/FB653D8B-87EC-4A34-A8C5-678FBE3305E0.png"]});
+
+  }
+});
   const now = Date.now();
   const timestamps = cooldowns.get(command.name);
   const cooldownAmount = (command.cooldown || 1) * 1000;
